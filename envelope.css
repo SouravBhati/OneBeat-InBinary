@@ -1,0 +1,371 @@
+/* styles.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('images/georgia-de-lotz--3xSBrSzTjg-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: auto;
+}
+
+.container {
+  position: relative;
+}
+
+.valentines {
+  position: relative;
+  top: 50px;
+  cursor: pointer;
+  animation: up 3s linear infinite;
+}
+
+.envelope {
+  position: relative;
+  width: 400px; /* Increased width */
+  height: 250px; /* Increased height */
+  background-color: #f08080;
+}
+
+.envelope:before {
+  background-color: #f08080;
+  content: "";
+  position: absolute;
+  width: 282px; /* Increased width */
+  height: 282px; /* Increased height */
+  transform: rotate(45deg);
+  top: -140px; /* Adjusted position */
+  left: 59px; /* Adjusted position */
+  border-radius: 40px 0 0 0; /* Adjusted border radius */
+}
+
+.card {
+  position: absolute;
+  background-color: #eae2b7;
+  width: 350px; /* Increased width */
+  height: 200px; /* Increased height */
+  top: 10px;
+  left: 25px;
+  box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+  transition: top 0.5s;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  border: 3px solid #003049;
+  border-style: dotted;
+  width: 300px; /* Increased width */
+  height: 170px; /* Increased height */
+  left: 15px;
+  top: 15px;
+}
+
+.text {
+  position: absolute;
+  font-family: 'Brush Script MT', cursive;
+  font-size: 22px; /* Increased font size */
+  text-align: center;
+  line-height: 30px; /* Adjusted line height */
+  top: 25px; /* Adjusted position */
+  color: #003049;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s;
+}
+
+.cardTextalign1 {
+  line-height: 32px !important; /* Adjusted line height */
+  left: -9px;
+}
+
+.cardTextalign2 {
+  line-height: 32px !important; /* Adjusted line height */
+  left: -5px;
+}
+
+.cardTextalign34 {
+  right: 30px; /* Adjusted position */
+  left: 16px; /* Adjusted position */
+}
+
+.word {
+  font-size: 30px; /* Increased font size */
+  color: rgb(220, 11, 11);
+}
+
+.emoji {
+  font-size: 27px; /* Adjust the size as needed */
+}
+
+.text.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.text.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.heart {
+  background-color: #d62828;
+  display: inline-block;
+  height: 40px; /* Increased size */
+  margin: 0 15px; /* Increased margin */
+  position: relative;
+  top: 15px; /* Adjusted position */
+  left: 15px; /* Adjusted position */
+  transform: rotate(-45deg);
+  width: 40px; /* Increased size */
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: #d62828;
+  border-radius: 50%;
+  height: 40px; /* Increased size */
+  position: absolute;
+  width: 40px; /* Increased size */
+}
+
+.heart:before {
+  top: -20px; /* Adjusted position */
+  left: 0;
+}
+
+.heart:after {
+  left: 20px; /* Adjusted position */
+  top: 0;
+}
+
+.front {
+  position: absolute;
+  border-right: 240px solid #f4978e; /* Increased size */
+  border-top: 130px solid transparent; /* Adjusted size */
+  border-bottom: 130px solid transparent; /* Adjusted size */
+  left: 160px; /* Adjusted position */
+  top: 10px; /* Adjusted position */
+  width: 0;
+  height: 0;
+  z-index: 10;
+}
+
+.front:before {
+  position: absolute;
+  content: "";
+  border-left: 400px solid #f8ad9d; /* Increased size */
+  border-top: 260px solid transparent; /* Adjusted size */
+  left: -160px; /* Adjusted position */
+  top: -130px; /* Adjusted position */
+  width: 0;
+  height: 0;
+}
+
+.shadow {
+  position: absolute;
+  width: 400px; /* Increased width */
+  height: 30px; /* Increased height */
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 320px; /* Adjusted position */
+  left: -20px; /* Adjusted position */
+  animation: scale 3s linear infinite;
+  z-index: -1;
+}
+
+
+
+
+/*---------------- CSS for button styling inside envelope --------------------*/
+.button-container {
+  position: relative;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+#missionExecuted {
+  /* background-color: #ff6f61; Color of the button */
+  background: rgba(255, 255, 255, 0.127);
+  border: none;
+  padding: 15px 30px; /* Increase size for better appearance */
+  font-size: 18px; /* Font size */
+  color: white; /* Button text color */
+  cursor: pointer;
+  z-index: 20; /* Ensure the button is above other elements */
+  display: inline-block;
+  margin: 10px auto;
+  border-radius: 50px; /* Rounded corners for button */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Initial shadow */
+  transition: all 0.3s ease; /* Smooth transition for all effects */
+  position: relative;
+  overflow: hidden; /* Ensure pseudo-element stays within button */
+}
+
+/* Hover effect */
+#missionExecuted:hover {
+  background-color: #ff3d29; /* Darker background on hover */
+  transform: scale(1.1) rotate(3deg); /* Slight enlargement and rotation */
+}
+
+/* Click effect */
+#missionExecuted:active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%; /* Larger than button */
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: ripple 0.6s ease-out;
+}
+
+/* Ripple animation */
+@keyframes ripple {
+  from {
+      transform: scale(0);
+      opacity: 1;
+  }
+  to {
+      transform: scale(1);
+      opacity: 0;
+  }
+}
+
+/* Shape transformation on hover */
+#missionExecuted:hover {
+  border-radius: 10px; /* Square corners on hover */
+  background-color: #ff3d29;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Larger shadow on hover */
+}
+/* ------------------ END's Here ----------------------- */
+
+
+
+
+
+
+
+
+@keyframes up {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes scale {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+
+  50% {
+    transform: scaleX(0.85);
+  }
+}
+
+.hearts {
+  position: absolute;
+}
+
+.one,
+.two,
+.three,
+.four,
+.five {
+  background-color: red;
+  display: inline-block;
+  height: 15px; /* Increased size */
+  margin: 0 15px; /* Increased margin */
+  position: relative;
+  transform: rotate(-45deg);
+  width: 15px; /* Increased size */
+  top: -150px; /* Adjusted position */
+}
+
+.one:before,
+.one:after,
+.two:before,
+.two:after,
+.three:before,
+.three:after,
+.four:before,
+.four:after,
+.five:before,
+.five:after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 15px; /* Increased size */
+  position: absolute;
+  width: 15px; /* Increased size */
+}
+
+.one:before,
+.two:before,
+.three:before,
+.four:before,
+.five:before {
+  top: -7px; /* Adjusted position */
+  left: 0;
+}
+
+.one:after,
+.two:after,
+.three:after,
+.four:after,
+.five:after {
+  left: 7px; /* Adjusted position */
+  top: 0;
+}
+
+.one {
+  left: 15px; /* Adjusted position */
+  animation: heart 1s ease-out infinite;
+}
+
+.two {
+  left: 40px; /* Adjusted position */
+  animation: heart 2s ease-out infinite;
+}
+
+.three {
+  left: 65px; /* Adjusted position */
+  animation: heart 1.5s ease-out infinite;
+}
+
+.four {
+  left: 90px; /* Adjusted position */
+  animation: heart 2.3s ease-out infinite;
+}
+
+.five {
+  left: 115px; /* Adjusted position */
+  animation: heart 1.7s ease-out infinite;
+}
+
+@keyframes heart {
+  0% {
+    transform: translateY(0) rotate(-45deg) scale(0.3);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-150px) rotate(-45deg) scale(1.3);
+    opacity: 0.5;
+  }
+}
