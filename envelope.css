@@ -67,7 +67,7 @@ body {
 
 .text {
   position: absolute;
-  font-family: 'Brush Script MT', cursive;
+  font-family: cursive;
   font-size: 22px; /* Increased font size */
   text-align: center;
   line-height: 30px; /* Adjusted line height */
