@@ -25,7 +25,7 @@ $(document).ready(function () {
             initialHover = false; // Ensure this block runs only once
             setTimeout(function () {
                 showNextText();
-            }, 7000); // Wait for 5 seconds before starting the text transitions
+            }, 8000); // Wait for 5 seconds before starting the text transitions
         } else if (index > 1) {
             showNextText(); // Continue the sequence without delay if it's not the first hover
         }
