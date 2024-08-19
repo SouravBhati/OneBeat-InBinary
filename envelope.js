@@ -10,7 +10,7 @@ $(document).ready(function () {
             console.log('Autoplay was blocked: ', error);
         });
     };
-    // ---------- END's Here ----------------
+    // ---------- END's Here ---------------
     
     let $card = $('.card');
     let $texts = $card.find('.text');
