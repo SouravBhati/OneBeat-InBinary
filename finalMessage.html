@@ -184,7 +184,7 @@
                     canvas.unbind("click");
                     canvas.unbind("mousemove");
                     canvas.removeClass('hand');
-                    // Show the msgBox div 5 seconds after the canvas is clicked with a transition effect
+                    // Show the msgBox div 11 seconds after the canvas is clicked with a transition effect
                 setTimeout(function() {
                     var msgBox = document.getElementById("msgBox");
                     msgBox.style.display = "block";
@@ -197,7 +197,7 @@
                         msgBox.style.transform = "translateX(0)";
                         msgBox.style.opacity = "1";
                     }, 10); // Slight delay to trigger transition
-                }, 13000);
+                }, 11000);
                 }
             }).mousemove(function (e) {
                 var offset = canvas.offset(), x, y;
