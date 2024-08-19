@@ -13,7 +13,7 @@ body {
 
 .postcard {
   width: 860px;
-  height: 570px;
+  height: 585px;
   background: rgba(255, 255, 255, 0.101);
 
   margin: 0 auto;
@@ -33,7 +33,7 @@ body {
 
 .postcard1 {
   width: 860px;
-  height: 570px;
+  height: 585px;
   background: #f594b862;
   position: absolute;
   left: 7%;
@@ -106,7 +106,7 @@ p span {
   color: #800020;
 }
 p {
-  margin-top: -34px;
+  margin-top: -37px;
     text-align: left;
     font-family: cursive;
     color: #000;
