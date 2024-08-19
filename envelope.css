@@ -174,7 +174,7 @@ body {
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.3);
   top: 320px; /* Adjusted position */
-  left: -20px; /* Adjusted position */
+  left: 0px; 
   animation: scale 3s linear infinite;
   z-index: -1;
 }
