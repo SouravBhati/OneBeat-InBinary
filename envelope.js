@@ -1,4 +1,17 @@
 $(document).ready(function () {
+    // functio to play audio
+    var audio = document.getElementById('backgroundAudio');
+
+    // Ensure the audio is loaded and seek to 5 seconds
+    audio.onloadeddata = function() {
+        audio.currentTime = 5; // Set the starting time in seconds
+        audio.play().catch(function(error) {
+            // Handle the case where the autoplay was blocked
+            console.log('Autoplay was blocked: ', error);
+        });
+    };
+    // ---------- END's Here ----------------
+    
     let $card = $('.card');
     let $texts = $card.find('.text');
     let index = 1; // Start from the second text (index 1)
