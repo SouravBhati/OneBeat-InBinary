@@ -1,15 +1,13 @@
 $(document).ready(function () {
     // functio to play audio
-    var audio = document.getElementById('backgroundAudio');
+    const audio = document.getElementById('backgroundAudio');
 
-    // Ensure the audio is loaded and seek to 5 seconds
-    audio.onloadeddata = function() {
-        audio.currentTime = 5; // Set the starting time in seconds
-        audio.play().catch(function(error) {
-            // Handle the case where the autoplay was blocked
-            console.log('Autoplay was blocked: ', error);
+    // Start the audio playback after 20 seconds
+    setTimeout(function() {
+        audio.play().catch(error => {
+            console.error('Playback failed:', error);
         });
-    };
+    }, 20000); // 20000 milliseconds = 20 seconds
     // ---------- END's Here ---------------
     
     let $card = $('.card');
