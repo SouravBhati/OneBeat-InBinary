@@ -13,6 +13,10 @@
 </head>
 
 <body>
+     <header>
+        <button id="playAudioButton" class="animated-button">Want a touch of music 🎶🎧</button>
+        <audio id="backgroundAudio" src="audioIndex.mp3" preload="auto"></audio>
+    </header>
     <div class="container">
         <div class="valentines">
             <div class="envelope"></div>
@@ -39,11 +43,24 @@
         <div class="shadow"></div>
     </div>
 
-    <!-- Audio Element -->
-    <audio id="backgroundAudio" src="aud.mp3" preload="auto"></audio>
-
     <!-- Link to the separate JavaScript file -->
     <script src="envelope.js"></script>
+    <!-- Inline script to handle audio playback -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const playButton = document.getElementById('playAudioButton');
+            const audio = document.getElementById('backgroundAudio');
+    
+            playButton.addEventListener('click', function() {
+                // Set the audio to start from 20 seconds
+                audio.currentTime = 8;
+    
+                audio.play().catch(error => {
+                    console.error('Playback failed:', error);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
