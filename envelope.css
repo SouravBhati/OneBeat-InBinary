@@ -76,6 +76,125 @@ body {
   opacity: 1;
 }
 
+ /* New Css for glowing button  */
+
+ header {
+  position: absolute;
+  margin-top: 630px;
+  padding-left: 1110px;
+}
+
+.animated-button::before {
+  content: '';
+    background: linear-gradient(45deg,
+        #FF0000, #FF7300, #FFFB00, #48FF00,
+        #00FFD5, #002BFF, #FF00C8, #FF0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+  }
+
+  @keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+  }
+
+  .animated-button:hover::before {
+    opacity: 1;
+  }
+
+  animated-button:active::after {
+   background: transparent;
+  }
+
+  .animated-button:active {
+    font-weight: bold;
+    color: #003049;
+  }
+
+  .btnGlowing {
+    font-family: cursive;
+    font-size: 16px;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 20px;
+    /* background-color: transparent; */
+}
+
+.btnGlowing::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ff6f61;
+    /* background-color: #c83b0b70; */
+    left: 0;
+    top: 0;
+    border-radius: 18px;
+}
+.btnGlowing:hover {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.btnGlowing::before {
+    content: "";
+    background:  linear-gradient(
+        45deg,
+        #FF0000, #FF7300, #FFFB00, #48FF00,
+        #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 18px;
+    opacity: 0;
+}
+
+@keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+
+.btnGlowing:hover::before {
+    opacity: 1;
+}
+
+.btnGlowing:active::after {
+    background: transparent;
+}
+
+.btnGlowing:active {
+    color: #FF0000;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+/* END's Here */
+
 .container {
   position: relative;
 }
