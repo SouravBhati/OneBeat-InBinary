@@ -12,67 +12,95 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         /* Base styling for the button */
-.animated-button {
-  background: linear-gradient(135deg, #ff6f61, #ff3d29); /* Gradient background */
-  color: white; /* Button text color */
-  border: none;
-  padding: 15px 30px;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 50px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
-  transition: all 0.4s ease-in-out; /* Smooth transition for hover effect */
-  position: fixed; /* Fix the button in place */
-  bottom: 20px; /* Distance from the bottom */
-  right: 20px; /* Distance from the right */
-  transform: scale(1); /* Initial scale */
-  will-change: transform, box-shadow; /* Optimize animations */
-  overflow: hidden; /* Hide overflow for pseudo-element */
-  z-index: 1; /* Ensure button is above other elements */
-}
+ /* New Css for glowing button  */
 
-/* Button hover effect */
-.animated-button:hover {
-  background: linear-gradient(135deg, #ff3d29, #ff6f61); /* Reverse gradient on hover */
-  transform: scale(1.15) rotate(5deg); /* Slightly larger and rotated on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Larger shadow on hover */
-}
-
-/* Button click effect */
-.animated-button:active {
-  background: linear-gradient(135deg, #e63e1c, #ff6f61); /* Darker gradient on click */
-  transform: scale(0.95) rotate(-2deg); /* Slightly smaller and rotated on click */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Reduced shadow on click */
-}
-
-/* Button focus effect */
-.animated-button:focus {
-  outline: none; /* Remove default outline */
-  box-shadow: 0 0 0 4px rgba(255, 105, 97, 0.6); /* Custom focus outline with glow effect */
-}
-
-/* Pseudo-element for the animation effect */
-.animated-button::after {
-  content: '';
+ header {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%; /* Large size to ensure it covers the button */
-  height: 300%;
-  background: rgba(255, 255, 255, 0.3); /* Light color for the emanation effect */
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  pointer-events: none; /* Prevent pseudo-element from interfering with clicks */
+  margin-top: 630px;
+  padding-left: 1110px;
 }
 
-/* Animation when the button is clicked */
-.animated-button:focus::after,
-.animated-button:active::after {
-  transform: translate(-50%, -50%) scale(0);
-  opacity: 1;
+  animated-button:active::after {
+   background: transparent;
+  }
+
+  .animated-button:active {
+    font-weight: bold;
+    color: #003049;
+  }
+
+  .btnGlowing {
+    font-family: cursive;
+    font-size: 16px;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 20px;
+    /* background-color: transparent; */
 }
+
+.btnGlowing::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ff6f61;
+    /* background-color: #c83b0b70; */
+    left: 0;
+    top: 0;
+    border-radius: 18px;
+}
+.btnGlowing:hover {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.btnGlowing::before {
+    content: "";
+    background:  linear-gradient(
+        45deg,
+        #FF0000, #FF7300, #FFFB00, #48FF00,
+        #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 18px;
+    opacity: 0;
+}
+
+@keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+
+.btnGlowing:hover::before {
+    opacity: 1;
+}
+
+.btnGlowing:active::after {
+    background: transparent;
+}
+
+.btnGlowing:active {
+    color: #FF0000;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+/* END's Here */
     </style>
 </head>
 
