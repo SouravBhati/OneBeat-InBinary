@@ -414,7 +414,7 @@
                     blooms[i].jump();
                 }
             } 
-            if ((blooms.length && blooms.length < 3) || !blooms.length) {
+            if ((blooms.length && blooms.length < 5) || !blooms.length) {
                 var bloom = this.opt.bloom || {},
                     width = bloom.width || this.width,
                     height = bloom.height || this.height,
